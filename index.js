@@ -9,14 +9,17 @@ function collatzProcedure(num) {
   //En guardclause for å se om tallet er større enn 0 eller om det er et helt tall.
   if (num < 1 || !Number.isInteger(num))
     return console.log(`Please use a whole number above 0`);
+
   //starter loopen, konsollogger at loopen er startet.
   console.log(
     `Running the Collatz Procedure on all numbers between 1 and ${num}`
   );
+
   //lager en loop som kjører gjennom alle tallene mellom 1 og num.
   for (let i = 0; i < num; i++) {
     //har i+1 som input parameter i numberLoop fordi i er 0, men vil starte på 1.
     numberLoop(i + 1);
+
     //skjekker etter loopen er ferdig om stepRecord og peakRecord skal oppdateres.
     if (stepRecord < steps) {
       stepRecord = steps;
@@ -59,4 +62,4 @@ function numberLoop(inputNum) {
   }
 }
 
-collatzProcedure(5000000);
+collatzProcedure();
